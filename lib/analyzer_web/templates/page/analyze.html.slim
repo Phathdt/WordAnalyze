@@ -1,0 +1,12 @@
+h1 = link "< Back", to: Routes.page_path(@conn, :index)
+
+table.table.table-striped
+  thead
+    tr
+      th scope="col"  Character
+      th scope="col"  Count
+  tbody
+    = for {char, count} <- @res do
+      tr
+        td= char
+        td= count

@@ -1,1 +1,11 @@
-h1.app-name Analyzer
+h1.app-name.text-center Web Analyzer
+
+= form_for @conn, Routes.page_path(@conn, :analyze), fn f ->
+
+  = text_input(f, :url, placeholder: 'URL')
+  = error_tag f, :url
+
+  .container
+    .row.justify-content-center
+      .btn
+        = submit "analyze"
