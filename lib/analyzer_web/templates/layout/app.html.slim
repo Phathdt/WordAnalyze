@@ -1,0 +1,16 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    title Analyzer · Phoenix Framework
+    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+
+  body
+    main.container role="main"
+      p.alert.alert-info role="alert"= get_flash(@conn, :info)
+      p.alert.alert-danger role="alert"= get_flash(@conn, :error)
+      = @inner_content
+
+    script type="text/javascript" src="#{Routes.static_path(@conn, "/js/app.js")}"
